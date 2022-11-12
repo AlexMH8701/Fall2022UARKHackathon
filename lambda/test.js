@@ -11,11 +11,13 @@ const getMove = (enemyMove) => {
     return value 
 }
 
-export const pauseTime = () => {
+const pauseTime = () => {
     //do a call to an api
-    return '<break time="3s"/>'
+    var value = '<break time="3s"/>'
+    return value
 }
 
 module.exports = {
-    getMove
+    getMove,
+    pauseTime
 }
