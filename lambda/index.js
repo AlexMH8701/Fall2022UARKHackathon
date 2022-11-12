@@ -26,7 +26,7 @@ const LaunchRequestHandler = {
         console.log("Test")
 
         return handlerInput.responseBuilder
-            .speak("fuckbitchcuntcummies")
+            .speak( '<amazon:effect name="whispered">' + "fuckbitchcuntcummies")
             .reprompt(speakOutput)
             .getResponse();
     }
