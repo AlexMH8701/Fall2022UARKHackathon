@@ -16,7 +16,7 @@ const loadAPI = () => {
 
     }).on("error", (err) => {
         console.log("Error: " + err.message);
-})
+    })
 }
 const getMove = (enemyMove) => {
     var characters = 'ABCDEFGH';
