@@ -22,12 +22,14 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome, what move would you like to do?';
+        //const speakOutput = 'Welcome, what move would you like to do?';
+        var x =  '<amazon:effect name="whispered">'
+        x += 'fuckbitchcuntcummies'
         console.log("Test")
 
         return handlerInput.responseBuilder
-            .speak( '<amazon:effect name="whispered">' + "fuckbitchcuntcummies")
-            .reprompt(speakOutput)
+            .speak(x)
+            .reprompt(x)
             .getResponse();
     }
 };
