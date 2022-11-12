@@ -31,10 +31,14 @@ const chess_moveIntentHandler = {
         const number2 = slots['endPosition'].value
         
         const speakOutput = `you moved ${number} to ${number2}`
-        //const speakOutput = 'you moved ${number} to ${number2}';
-
+        
+        const number3 = test.enemyMove();
+        
+        const enemyMove = `enemy moved ${number}`;
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
+            .speak(enemyMove)
             .reprompt(speakOutput)
             .getResponse();
     }
