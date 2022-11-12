@@ -42,6 +42,7 @@ const chess_moveIntentHandler = {
         const number = slots['targetPiece'].value
         const number2 = slots['endPosition'].value
         
+        API.doPostRequest(number,number2)
         var speakOutput = `you moved ${number} to ${number2}`
         
         let response = await API.fetchMove();
