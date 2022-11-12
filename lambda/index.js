@@ -26,6 +26,18 @@ const chess_moveIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'chess_move';
     },
     handle(handlerInput) {
+        
+        const theNumber = this.event.request.intent.slots.number.value;
+        var query = parseInt(theNumber);
+        var theFact = "nothing"
+        
+        logic.httpGet(query,  (theResult) => {
+                console.log("sent     : " + query);
+                console.log("received : " + theResult);
+                theFact = theResult;
+                                
+            });
+        
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const number = slots['targetPiece'].value
         const number2 = slots['endPosition'].value
@@ -33,7 +45,8 @@ const chess_moveIntentHandler = {
         var speakOutput = `you moved ${number} to ${number2}`
         
         return handlerInput.responseBuilder
-            .speak(speakOutput + logic.pauseTime(number,number2))
+            .speak(theFact)
+            //.speak(speakOutput + logic.pauseTime(number,number2))
             .reprompt(speakOutput)
             .getResponse();
     }
