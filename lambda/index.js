@@ -4,7 +4,7 @@
  * session persistence, api calls, and more.
  * */
 const Alexa = require('ask-sdk-core');
-//const test = require('./test');
+const test = require('./test');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
