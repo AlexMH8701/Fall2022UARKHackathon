@@ -28,20 +28,6 @@ const chess_moveIntentHandler = {
     },
     handle(handlerInput) {
         
-       const theNumber = this.event.request.intent.slots.number.value;
-        var myRequest = parseInt(theNumber);
-        const url = `http://numbersapi.com/${theNumber}`;
-        var theFact = "nothing"
-        
-         request.get(url, (error, response, body) => {
-            // let json = JSON.parse(body);
-            console.log('error:', error); // Print the error if one occurred
-            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-            console.log('body:', body); // Print the body
-
-            theFact = body;                  
-        });
-        
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const number = slots['targetPiece'].value
         const number2 = slots['endPosition'].value
@@ -49,8 +35,8 @@ const chess_moveIntentHandler = {
         var speakOutput = `you moved ${number} to ${number2}`
         
         return handlerInput.responseBuilder
-            .speak(theFact)
-            //.speak(speakOutput + logic.pauseTime(number,number2))
+            //.speak(theFact)
+            .speak("fuck" + speakOutput + logic.pauseTime(number,number2))
             .reprompt(speakOutput)
             .getResponse();
     }
