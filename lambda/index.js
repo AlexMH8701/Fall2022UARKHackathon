@@ -30,7 +30,7 @@ const chess_moveIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
-            .withSimpleCard('your move ')
+            .withSimpleCard('your move ',speakOutput)
             .getResponse();
     }
 };
