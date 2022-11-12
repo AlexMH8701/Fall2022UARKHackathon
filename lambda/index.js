@@ -45,8 +45,6 @@ const chess_moveIntentHandler = {
         var speakOutput = `you moved ${number} to ${number2}`
         
         
-        const request = require('request');
-        
         
         return handlerInput.responseBuilder
             .speak(speakOutput + logic.pauseTime(number,number2))
