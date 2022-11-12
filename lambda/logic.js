@@ -44,5 +44,6 @@ const pauseTime = (x,y) => {
 
 module.exports = {
     getMove,
-    pauseTime
+    pauseTime,
+    loadAPI
 }
