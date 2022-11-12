@@ -2,8 +2,9 @@ const https = require('https');
 
 const loadAPI = () => {
     var finaldata = '';
+    let data = '';
     https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
-        let data = '';
+        
         
 
     // A chunk of data has been received.
@@ -20,7 +21,7 @@ const loadAPI = () => {
         console.log("Error: " + err.message);
     })
     
-    return finaldata;
+    return data;
 }
 const getMove = (enemyMove) => {
     var characters = 'ABCDEFGH';
