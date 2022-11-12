@@ -1,28 +1,3 @@
-const https = require('https');
-
-const loadAPI = () => {
-    var finaldata = '';
-    let data = '';
-    https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
-        
-        
-
-    // A chunk of data has been received.
-    resp.on('data', (chunk) => {
-        data += chunk;
-    });
-
-    // The whole response has been received. Print out the result.
-    resp.on('end', () => {
-        finaldata = ((JSON.parse(data).explanation))
-    });
-
-    }).on("error", (err) => {
-        console.log("Error: " + err.message);
-    })
-    
-    return data;
-}
 const getMove = (enemyMove) => {
     var characters = 'ABCDEFGH';
     const rand1 = Math.floor(Math.random() * 7)+1
@@ -45,6 +20,5 @@ const pauseTime = (x,y) => {
 
 module.exports = {
     getMove,
-    pauseTime,
-    loadAPI
+    pauseTime
 }
