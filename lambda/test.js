@@ -13,7 +13,7 @@ const getMove = (enemyMove) => {
 
 const pauseTime = (x,y) => {
     //do a call to an api
-    console.log(x)
+    console.log("int x " + x)
     var value = '<break time="3s"/>'
     return value
 }
