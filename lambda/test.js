@@ -15,7 +15,7 @@ const pauseTime = (x,y) => {
     //do a call to an api
     console.log("int x " + x)
     var value = '<break time="3s"/>'
-    return value
+    return x
 }
 
 module.exports = {
