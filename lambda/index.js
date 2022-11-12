@@ -24,7 +24,7 @@ const LaunchRequestHandler = {
     handle(handlerInput) {
         //const speakOutput = 'Welcome, what move would you like to do?';
         var x =  '<amazon:effect name="whispered">'
-        x += 'fuckbitchcuntcummies'
+        x += '\nfuckbitchcuntcummies'
         console.log("Test")
 
         return handlerInput.responseBuilder
