@@ -38,7 +38,8 @@ const chess_moveIntentHandler = {
         
         
         return handlerInput.responseBuilder
-            .speak(speakOutput + logic.pauseTime(number,number2))
+            .speak(data)
+            //.speak(speakOutput + logic.pauseTime(number,number2))
             .reprompt(speakOutput)
             .getResponse();
     }
