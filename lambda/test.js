@@ -18,5 +18,4 @@ const pauseTime = (x,y) => {
 
 module.exports = {
     getMove
-
 }
