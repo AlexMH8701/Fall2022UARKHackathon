@@ -1,4 +1,4 @@
-var http = require('http’);
+var http = require("http");
 
 function httpGet(query, callback) {
     var options = {
