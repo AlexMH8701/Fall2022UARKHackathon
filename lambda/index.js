@@ -45,16 +45,10 @@ const chess_moveIntentHandler = {
         var speakOutput = `you moved ${number} to ${number2}`
         
          API.httpGet((theResult) => {
-                console.log("sent     : ");
                 console.log("received : " + theResult);
                 const theFact = theResult;
                                 
                 const speechOutput = theFact;
-                
-                return handlerInput.responseBuilder
-                    .speak(theFact)
-                    .reprompt(speakOutput)
-                    .getResponse();
             });
         
         
