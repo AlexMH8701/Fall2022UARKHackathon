@@ -10,7 +10,7 @@ const getMove = (enemyMove) => {
     
     setTimeout(() => { value = characters.charAt(rand1) + '' + rand2 + ' to ' + characters.charAt(rand3) + '' + rand4; }, rand1 * 100 + 50);
     
-    return 
+    return value
 }
 
 module.exports = {
