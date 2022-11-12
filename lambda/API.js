@@ -28,3 +28,16 @@ module.exports.doPostRequest = async function doPostRequest(pieceMoved, movedTo)
     let data = res.data;
     console.log(data);
 }
+
+module.exports.doPostRequest = async function makeGame(user){
+    //code for making makeGame
+    
+    var error = false;
+    var returned = true;
+    if(error){
+        return "there was an error, try again"
+    }
+    
+    return "challenged Alex to a game"
+    
+}
