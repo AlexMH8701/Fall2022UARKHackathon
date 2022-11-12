@@ -36,7 +36,7 @@ const chess_moveIntentHandler = {
         
         return handlerInput.responseBuilder
             //.speak(theFact)
-            .speak("fuck" + speakOutput + logic.pauseTime(number,number2))
+            .speak("cunt " + speakOutput + logic.pauseTime(number,number2))
             .reprompt(speakOutput)
             .getResponse();
     }
