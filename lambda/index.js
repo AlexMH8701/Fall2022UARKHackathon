@@ -34,11 +34,11 @@ const chess_moveIntentHandler = {
         
         const number3 = test.enemyMove();
         
-        const enemyMove = `enemy moved ${number}`;
+        //const enemyMove = `enemy moved ${number}`;
         
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .speak(enemyMove)
+            //.speak(enemyMove)
             .reprompt(speakOutput)
             .getResponse();
     }
