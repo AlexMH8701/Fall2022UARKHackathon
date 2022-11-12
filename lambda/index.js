@@ -37,13 +37,14 @@ const chess_moveIntentHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'chess_move';
     },
-    handle(handlerInput) {
+    async handle(handlerInput) {
         
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const number = slots['targetPiece'].value
         const number2 = slots['endPosition'].value
         
         var speakOutput = `you moved ${number} to ${number2}`
+        
         
         
         return handlerInput.responseBuilder
