@@ -60,7 +60,7 @@ const chess_gameIntentHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'chess_game';
     },
-    async handle(handlerInput) {
+    handle(handlerInput) {
         
         let speakOutput = "Game succesfully created"
         return handlerInput.responseBuilder
