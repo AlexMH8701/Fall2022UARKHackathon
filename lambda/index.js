@@ -63,9 +63,10 @@ const chess_gameIntentHandler = {
      async handle(handlerInput) {
         
         let response = await API.makeGame("Alex");
+        var speakOutput = response + "";
         return handlerInput.responseBuilder
-            .speak(response)
-            .reprompt(response)
+            .speak(speakOutput)
+            .reprompt(speakOutput)
             .getResponse();
     }
 };
