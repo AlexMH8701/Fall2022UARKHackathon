@@ -12,6 +12,7 @@ const LaunchRequestHandler = {
     },
     handle(handlerInput) {
         const speakOutput = 'Welcome, what move would you like to do?';
+        console.log("Test")
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
