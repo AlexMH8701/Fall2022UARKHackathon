@@ -46,10 +46,10 @@ const chess_moveIntentHandler = {
         var speakOutput = `you moved ${number} to ${number2}`
         
         let response = await API.fetchJokesApi();
-        let opponentMove = response;
+        let x = response;
         
         return handlerInput.responseBuilder
-            .speak(opponentMove)
+            .speak(x)
             .reprompt(speakOutput)
             .getResponse();
     }
