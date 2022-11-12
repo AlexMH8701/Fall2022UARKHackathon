@@ -7,15 +7,18 @@ const Alexa = require('ask-sdk-core');
 const logic = require('./logic');
 const API = require('./API');
 const axios = require('axios');
+const https = require('https');
+require('dotenv').config();
+challenge = require('./seek');
+board = require('./move');
+let gameId;
+let move;
 
-async function makeMove(){
-    
-} 
-
-async function opponentMove(){
-    
-} 
-
+function callbackMakeGame(str) {
+    obj = JSON.parse(str);
+    gameId = obj.challenge.id;
+    console.log(gameId);
+}
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -64,11 +67,15 @@ const chess_gameIntentHandler = {
         
         let response = await API.makeGame("Alex");
         var speakOutput = response + "";
+        challenge.makeGame('CowJuice919', false, 10, 0, 'standard', 
+                process.env.lichessToken, callbackMakeGame);
+
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
             .getResponse();
     }
+    
 };
 
 const HelpIntentHandler = {
