@@ -60,12 +60,12 @@ const chess_gameIntentHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'chess_game';
     },
-    handle(handlerInput) {
+     async handle(handlerInput) {
         
-        var speakOutput = "test"
+        let response = await API.makeGame("Alex");
         return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
+            .speak(response)
+            .reprompt(response)
             .getResponse();
     }
 };
