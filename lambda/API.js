@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 module.exports.fetchJokesApi = async function fetchJokesApi() {
-    let endpoint = 'http://api.icndb.com';
-    let url = endpoint + '/jokes/random';
+    let endpoint = 'https://www.randomnumberapi.com';
+    let url = endpoint + '/api/v1.0/random?min=0&max=88&count=2';
 
     let config = {
         timeout: 6500
