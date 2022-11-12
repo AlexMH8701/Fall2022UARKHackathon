@@ -5,6 +5,7 @@
  * */
 const Alexa = require('ask-sdk-core');
 const logic = require('./logic');
+const API = require(',/API');
 
 
 const LaunchRequestHandler = {
