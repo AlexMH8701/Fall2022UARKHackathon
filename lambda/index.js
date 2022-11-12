@@ -62,7 +62,7 @@ const chess_gameIntentHandler = {
     },
     handle(handlerInput) {
         
-        let speakOutput = "Game succesfully created"
+        var speakOutput = "test"
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
