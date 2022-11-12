@@ -11,7 +11,7 @@ const getMove = (enemyMove) => {
     return value 
 }
 
-const pauseTime = (x,y) => {
+export const pauseTime = () => {
     //do a call to an api
     return '<break time="3s"/>'
 }
