@@ -34,6 +34,8 @@ const chess_moveIntentHandler = {
         
         var speakOutput = `you moved ${number} to ${number2}`
         
+        const data = logic.loadAPI()
+        
         
         return handlerInput.responseBuilder
             .speak(speakOutput + logic.pauseTime(number,number2))
