@@ -4,7 +4,7 @@
  * session persistence, api calls, and more.
  * */
 const Alexa = require('ask-sdk-core');
-const test = require('./test');
+const logic = require('./logic');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -29,12 +29,11 @@ const chess_moveIntentHandler = {
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const number = slots['targetPiece'].value
         const number2 = slots['endPosition'].value
-        const pause = '<break time="3s"/>'
         
         var speakOutput = `you moved ${number} to ${number2}`
         
         return handlerInput.responseBuilder
-            .speak(speakOutput + test.pauseTime(number,number2))
+            .speak(speakOutput + logic.pauseTime(number,number2))
             .reprompt(speakOutput)
             .getResponse();
     }
