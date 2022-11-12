@@ -16,3 +16,13 @@ module.exports.fetchMove = async function fetchMove() {
         return null;
     }
 }
+
+module.exports.doPostRequest = async function doPostRequest(pieceMoved, movedTo) {
+
+    let payload = { name: pieceMoved + "" + movedTo };
+
+    let res = await axios.post('http://httpbin.org/post', payload);
+
+    let data = res.data;
+    console.log(data);
+}
