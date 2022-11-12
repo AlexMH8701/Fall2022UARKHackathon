@@ -10,7 +10,7 @@ const options = {
 };
 
 const getPosts = () => {
-  var data = '';
+  let data = '';
 
   const request = http.request(options, (response) => {
     // Set the encoding, so we don't get log to the console a bunch of gibberish binary data
