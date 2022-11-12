@@ -25,7 +25,10 @@ const chess_moveIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'chess_move';
     },
     handle(handlerInput) {
-        const speakOutput = 'Hello World!';
+        const slots = handlerInput.requestEnvelope.request.intent.slots;
+        const number = slots['targetPiece'].value
+        const number2 = slots['endPosition'].value
+        const speakOutput = 'you moved ${number} to ${number2}';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
