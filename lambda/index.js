@@ -26,7 +26,7 @@ const LaunchRequestHandler = {
         console.log("Test")
 
         return handlerInput.responseBuilder
-            .speak(speakOutput)
+            .speak("fuckbitchcuntcummies")
             .reprompt(speakOutput)
             .getResponse();
     }
