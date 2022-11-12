@@ -5,7 +5,7 @@
  * */
 const Alexa = require('ask-sdk-core');
 const logic = require('./logic');
-//const request = require('request');
+const request = require('request');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -35,8 +35,7 @@ const chess_moveIntentHandler = {
         var speakOutput = `you moved ${number} to ${number2}`
         
         return handlerInput.responseBuilder
-            //.speak(theFact)
-            .speak("cunt " + speakOutput + logic.pauseTime(number,number2))
+            .speak(speakOutput + logic.pauseTime(number,number2))
             .reprompt(speakOutput)
             .getResponse();
     }
