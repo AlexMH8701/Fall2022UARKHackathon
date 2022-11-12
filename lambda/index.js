@@ -11,7 +11,7 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome, what move <break time="3s"/> would you like to do?';
+        const speakOutput = 'Welcome, what move would you like to do?';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -29,16 +29,18 @@ const chess_moveIntentHandler = {
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const number = slots['targetPiece'].value
         const number2 = slots['endPosition'].value
+        const pause = '<break time="3s"/>'
         
         var speakOutput = `you moved ${number} to ${number2}`
         
         const number3 = test.getMove();
         
-        speakOutput += `\nenemy moved ${number3}`;
+        var enemyMove = `\nenemy moved ${number3}`;
         
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            //.speak(enemyMove)
+            .speak(pause)
+            .speak(enemyMove)
             .reprompt(speakOutput)
             .getResponse();
     }
