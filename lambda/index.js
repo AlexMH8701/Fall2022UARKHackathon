@@ -6,6 +6,7 @@
 const Alexa = require('ask-sdk-core');
 const logic = require('./logic');
 
+
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
