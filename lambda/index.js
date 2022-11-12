@@ -28,7 +28,9 @@ const chess_moveIntentHandler = {
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const number = slots['targetPiece'].value
         const number2 = slots['endPosition'].value
-        const speakOutput = 'you moved ${number} to ${number2}';
+        
+        const speakOutput = `Your number is: ${number}.`
+        //const speakOutput = 'you moved ${number} to ${number2}';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
