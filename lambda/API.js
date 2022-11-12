@@ -1,9 +1,9 @@
 var http = require("http"); 
 
-function httpGet(query, callback) {
+function httpGet(callback) {
     var options = {
-        host: 'numbersapi.com',
-        path: '/' + encodeURIComponent(query),
+        host: 'randomnumberapi.com',
+        path: '/api/v1.0/random?min=0&max=77&count=2',
         method: 'GET',
     };
 
