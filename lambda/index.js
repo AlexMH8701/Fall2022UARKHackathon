@@ -44,7 +44,17 @@ const chess_moveIntentHandler = {
         
         var speakOutput = `you moved ${number} to ${number2}`
         
-
+        
+        const url = `https://www.randomnumberapi.com/api/v1.0/random?min=0&max=77&count=2`;
+        
+        request.get(url, (error, response, body) => {
+            // let json = JSON.parse(body);
+            console.log('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('body:', body); // Print the body
+        });
+        
+        const request = require('request');
         
         
         return handlerInput.responseBuilder
