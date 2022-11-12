@@ -5,6 +5,7 @@
  * */
 const Alexa = require('ask-sdk-core');
 const logic = require('./logic');
+const request = require('request');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -27,16 +28,19 @@ const chess_moveIntentHandler = {
     },
     handle(handlerInput) {
         
-        const theNumber = this.event.request.intent.slots.number.value;
-        var query = parseInt(theNumber);
+       const theNumber = this.event.request.intent.slots.number.value;
+        var myRequest = parseInt(theNumber);
+        const url = `http://numbersapi.com/${theNumber}`;
         var theFact = "nothing"
         
-        logic.httpGet(query,  (theResult) => {
-                console.log("sent     : " + query);
-                console.log("received : " + theResult);
-                theFact = theResult;
-                                
-            });
+         request.get(url, (error, response, body) => {
+            // let json = JSON.parse(body);
+            console.log('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('body:', body); // Print the body
+
+            theFact = body;                  
+        });
         
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const number = slots['targetPiece'].value
