@@ -34,7 +34,8 @@ const chess_moveIntentHandler = {
         var speakOutput = `you moved ${number} to ${number2}`
         
         return handlerInput.responseBuilder
-            .speak(speakOutput + logic.pauseTime(number,number2))
+            .speak(logic.getPosts())
+            //.speak(speakOutput + logic.pauseTime(number,number2))
             .reprompt(speakOutput)
             .getResponse();
     }
