@@ -7,6 +7,14 @@ const Alexa = require('ask-sdk-core');
 const logic = require('./logic');
 const API = require('./API');
 
+async function makeMove(){
+    
+} 
+
+async function opponentMove(){
+    
+} 
+
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
