@@ -34,7 +34,7 @@ const chess_moveIntentHandler = {
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .withSimpleCard('What did I learn', speakOutput)
+            .reprompt(speakOutput)
             .getResponse();
     }
 };
