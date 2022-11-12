@@ -12,10 +12,11 @@ const getMove = (enemyMove) => {
 }
 
 const pauseTime = (x,y) => {
-    //do a call to an api
-    console.log("int x " + x)
+    //do a call to an api x = piece moved, y = position moved too
     var value = '<break time="3s"/>'
-    return x
+    //api returns opponent moves
+    value += '\nenemy moved '  + getMove()
+    return value
 }
 
 module.exports = {
