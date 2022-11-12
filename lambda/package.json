@@ -13,6 +13,5 @@
     "ask-sdk-model": "^1.19.0",
     "node-fetch": "^3.3.0",
     "aws-sdk": "^2.326.0"
-  },
-  "type" : "module"
+  }
 }
