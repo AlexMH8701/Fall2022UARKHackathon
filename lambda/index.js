@@ -32,7 +32,7 @@ const chess_moveIntentHandler = {
         
         var speakOutput = `you moved ${number} to ${number2}`
         
-        const number3 = test.enemyMove();
+        const number3 = test.getMove();
         
         speakOutput += `\nenemy moved ${number3}`;
         
